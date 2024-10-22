@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable To-Do List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+</head>
+<body>
+    <div class="todo-container">
+        <h1>To-Do List</h1>
+        
+        <form id="data-form">
+            <input type="text" id="new-save-list" placeholder="Save a new list" required>
+            <button type="submit" id="new-save-list-btt">Save Data</button>
+        </form>
+        <form id="todo-form">
+            <input type="text" id="new-task" placeholder="Add a new task..." required>
+            <button type="submit" id="new-task-btt">Add Task</button>
+        </form>
+
+        <div class="categories">
+            <div class="category" id="todo">
+                <h2>To-Do</h2>
+                <ul id="todo-list" class="task-list" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+            </div>
+
+            <div class="category" id="in-progress">
+                <h2>In Progress</h2>
+                <ul id="in-progress-list" class="task-list" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+            </div>
+
+            <div class="category" id="done">
+                <h2>Done</h2>
+                <ul id="done-list" class="task-list" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+</body>
+</html>
